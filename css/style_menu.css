@@ -1,0 +1,191 @@
+.menu-box {
+	position:absolute;
+}
+
+/*.bg, #bgvideo {
+	position:absolute;
+}*/
+
+.menu {
+	position:absolute;
+	/*display:none;*/
+	width:100%;
+	margin-top:15%;
+	animation: Menu .7s .5s cubic-bezier(0.000, -1.000, 0.000, 1.000);
+}
+
+.item {
+	margin:0 auto;
+	opacity:0;
+	padding:0 5%;
+	width:20%;
+	animation: Menu2 .7s .5s cubic-bezier(0.000, 1.000, 0.000, 1.000) forwards;
+}
+
+.pic_title {
+	text-align: center;
+	margin-top: 5%;
+}
+
+.close-item {
+	animation: MenuClose linear .3s;
+}
+
+
+
+@keyframes Menu{
+  0% {
+	transform: translate(2%,0px);
+  }
+
+  100% {
+	transform: translate(0px,0px);
+  }
+}
+
+@-moz-keyframes Menu{
+  0% {
+	-moz-transform: translate(2%,0px);
+  }
+
+  100% {
+	-moz-transform: translate(0px,0px);
+  }
+}
+
+@-webkit-keyframes Menu{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes Menu{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes Menu{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+
+
+@keyframes Menu2{
+  0% {
+	transform: translate(0,20%) scale(0.5);
+    opacity:0;
+  }
+
+  100% {
+	transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+}
+
+@-moz-keyframes Menu2{
+  0% {
+	-moz-transform: translate(0,20%) scale(0.5);
+    opacity:0;
+  }
+
+  100% {
+	-moz-transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes Menu2{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes Menu2{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes Menu2{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+
+
+@keyframes MenuClose{
+  0% {
+	transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+
+  100% {
+	transform: translate(0,20%) scale(0.5);
+    opacity:0;
+  }
+}
+
+@-moz-keyframes MenuClose{
+  0% {
+	-moz-transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+
+  100% {
+	-moz-transform: translate(0,20%) scale(0.5);
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes MenuClose{
+  0% {
+	-webkit-transform: translate(0,0) scale(1);
+    opacity:1;
+  }
+
+  100% {
+	-webkit-transform: translate(0,20%) scale(0.5);
+    opacity:0;
+  }
+}
+
+@-o-keyframes MenuClose{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes MenuClose{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}

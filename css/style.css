@@ -1,0 +1,61 @@
+body {
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@font-face {
+    font-family: togekk;
+    src: url(../font/font.ttf);
+}
+
+a {
+	text-decoration:none;
+}
+
+.button {
+	text-decoration:none;
+	cursor: pointer;
+}
+
+.view {
+	position: absolute;
+	width: 101%;
+	height: 101%;
+	opacity: 1;
+	margin-left: -.5%;
+	-webkit-transition: all .7s ease-out;
+	transition: all 1s ease-out;
+}
+
+.view.ng-enter,
+.view.ng-leave {
+	-webkit-transition: all .7s ease-out;
+	transition: all 1s ease-out;
+}
+
+.view.ng-enter {
+	opacity: 0;
+	margin-left: 0;
+}
+
+.view.ng-enter.ng-enter-active {
+	opacity: 1;
+	margin-left: -.5%;
+}
+
+.view.ng-leave {
+	opacity: 1;
+	margin-left: -.5%;
+}
+
+.view.ng-leave.ng-leave-active {
+	opacity: 0;
+	margin-left: -1%;
+}
