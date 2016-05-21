@@ -25,10 +25,15 @@ page.config(function($routeProvider) {
 	};
 })
 .controller('menu', function($scope) {
-	vid = document.getElementById("bgvideo");
-	$(document).ready(function() {
-		vid.play();
-	});
+	// vid = document.getElementById("bgvideo");
+	// $(document).ready(function() {
+		// vid.play();
+	// });
+	// var options = {
+		// videoId : 'ab0TSkLe-E0',
+		// start : 3
+	// };
+	// $('.menu-box').tubular(options); 
 	
 	$scope.close = function() {
 		// vid.pause();
