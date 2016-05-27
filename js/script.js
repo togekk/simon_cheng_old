@@ -38,7 +38,7 @@ page.config(function($routeProvider) {
 		rel : 0,
 		showinfo : 0,
 		modestbranding : 1,
-		wmode : "opaque",
+		wmode : "transparent",
 		start : 25,
 		end : 62
 	};
