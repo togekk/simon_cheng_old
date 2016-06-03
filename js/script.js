@@ -16,23 +16,7 @@ page.config(function($routeProvider) {
 	}).otherwise({
 		redirectTo : '/'
 	});
-}).directive('animationend', function() {
-	return {
-		restrict: 'A',
-		scope: {
-			animationend: '&'
-		},
-		link: function(scope, element) {
-			var callback = scope.animationend(),
-				  events = 'animationend webkitAnimationEnd MSAnimationEnd' +
-						'transitionend webkitTransitionEnd';
-
-			element.on(events, function(event) {
-				callback.call(element[0], event);
-			});
-		}
-	};
-}).controller('index', function($rootScope, $scope) {
+}).controller('index', function($rootScope, $scope, $animate) {
 	$rootScope.travel_toggle = false;
 });
 

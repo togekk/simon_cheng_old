@@ -4,13 +4,13 @@
 
 <div class="container">
 	<div class="title">
-		<div class="pre">
+		<div class="pre" ng-class="{'fade_out' : enter_clicked}">
 			All about my journey. All about my lifestyle.
 		</div>
-		<div class="name">
+		<div class="name" ng-class="{'fade_out' : enter_clicked}">
 			Simon Cheng
 		</div>
-		<button class="enter col-sm-3 col-sm-offset-10" ng-disabled="enter_disabled" ng-click="intro_close()" animationend="enter_done()">
+		<button class="enter col-sm-3 col-sm-offset-10" ng-disabled="enter_disabled" ng-click="intro_close()" ng-class="{'fade_out' : enter_clicked}">
 			<span class="arrow">►</span>
 			<span class="enter_text">Enter</span>
 		</button>

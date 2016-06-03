@@ -27,6 +27,11 @@
 	font-size: 16px;
 	opacity: 0;
 	cursor: default;
+	text-align: center;
+	font-family: 'Segoe UI Light';
+	font-size: 16px;
+	opacity: 0;
+	cursor: default;
 	-webkit-animation: TitleAni 1s ease-out 2s forwards;
 	-moz-animation: TitleAni 1s ease-out 2s forwards;
 	-ms-animation: TitleAni 1s ease-out 2s forwards;
@@ -65,21 +70,21 @@
 	color: #309;
 }
 
-.enter-fade-out {
+.enter.fade_out {
 	-webkit-animation: EnterFadeOut ease-in .3s forwards;
 	-moz-animation: EnterFadeOut ease-in .3s forwards;
 	-ms-animation: EnterFadeOut ease-in .3s forwards;
 	animation: EnterFadeOut ease-in .3s forwards;
 }
 
-.title-fade-out {
+.name.fade_out {
 	-webkit-animation: TitleFadeOut ease-in .5s forwards;
 	-moz-animation: TitleFadeOut ease-in .5s forwards;
 	-ms-animation: TitleFadeOut ease-in .5s forwards;
 	animation: TitleFadeOut ease-in .5s forwards;
 }
 
-.title2-fade-out {
+.pre.fade_out {
 	-webkit-animation: TitleFadeOut ease-in .7s forwards;
 	-moz-animation: TitleFadeOut ease-in .7s forwards;
 	-ms-animation: TitleFadeOut ease-in .7s forwards;

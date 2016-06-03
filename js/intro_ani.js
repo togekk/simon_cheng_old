@@ -1,19 +1,16 @@
-page.controller('intro', function($rootScope, $scope, $animate) {
-	$rootScope.travel_toggle = false;
+page.controller('intro', function($rootScope, $scope, $animate, $timeout) {
 
 	$scope.enter_disabled = true;
-	
-	$scope.enter_done = function() {
-		$scope.enter_disabled = false;
-	};
 
+	$timeout(function() {
+		$scope.enter_disabled = false;
+	}, 5300);
 
 	$scope.intro_close = function() {
-		$('.enter').addClass('enter-fade-out');
-		$('.name').addClass('title-fade-out');
-		$('.pre').addClass('title2-fade-out');
-		$('.pre').one('webkitAnimationEnd mozanimationend oanimationend msAnimationEnd animationend', function() {
+		$scope.enter_disabled = true;
+		$scope.enter_clicked = true;
+		$timeout(function() {
 			window.location.href = "#/menu";
-		});
+		}, 700);
 	};
 })
