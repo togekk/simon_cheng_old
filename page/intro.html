@@ -10,7 +10,7 @@
 		<div class="name">
 			Simon Cheng
 		</div>
-		<button class="enter col-sm-3 col-sm-offset-10" ng-click="intro_close()">
+		<button class="enter col-sm-3 col-sm-offset-10" ng-disabled="enter_disabled" ng-click="intro_close()" animationend="enter_done()">
 			<span class="arrow">►</span>
 			<span class="enter_text">Enter</span>
 		</button>
