@@ -80,3 +80,19 @@ button {
 	outline: none;
 	border: none;
 }
+
+.intro, .travel_bg {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
+	position: fixed;
+	overflow-y: auto;
+}
+
+.fill {
+	width: 101%;
+	height: 101%;
+	min-height: 101%;
+}

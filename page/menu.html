@@ -1,31 +1,28 @@
 <!-- menu.html -->
-<div class="menu-box">
+<div class="menu-box text-center">
+
 	<youtube-video video-id="bgVideo" player-vars="playerVars"></youtube-video>
 
-	<div class="menu col-sm-8 col-sm-offset-2"></div>
+	<div class="loading text-center vertical-center" ng-class="loading_done_fade" ng-hide="loading_done_hide">
+		<img src="http://s33.postimg.org/pq0i470xp/2015_11_06_08_48_25_3_mp4_snapshot_00_24_2016_0.jpg" width="100%" />
+	</div>
 
-	<button class="{{buttonAni}}" ng-click="close_menu()">
-		<div class="item_box" ng-class="itemBoxAni">
-			<div class="item" ng-class="itemAni">
-
-				<div class="row">
-					<div class="pic">
-						<img src="{{travel_img}}" width="100%" />
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="pic_title text-center">
-						{{travel_title}}
-					</div>
-				</div>
-
+	<div class="menu">
+		<div class="a">
+			<div class="menu_title">
+				Travel
 			</div>
+			<button class="menu_button col-sm-3 col-sm-offset-2" ng-class="button_ani" ng-click="close_menu()" >
+				<div class="hovereffect">
+					<img src="{{travel_img}}" />
+					<div class="overlay">
+						<div class="pic_title">
+							{{travel_title}}
+						</div>
+					</div>
+				</div>
+			</button>
 		</div>
-	</button>
-
-	<div class="loading vertical-center" ng-class="loading_done_fade" ng-hide="loading_done_hide">
-		<i class="{{loading_icon}} col-sm-4 col-sm-offset-4"></i>
 	</div>
 
 </div>

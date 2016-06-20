@@ -1,19 +1,19 @@
 <!-- intro.html -->
-<div class="intro"><img src="http://s33.postimg.org/l71iz8931/image.jpg" width="101%" />
-</div>
-
-<div class="container">
-	<div class="title">
-		<div class="pre" ng-class="{'fade_out' : enter_clicked}">
-			All about my journey. All about my lifestyle.
+<div class="intro fill">
+	<div class="container">
+		<div class="title">
+			<div class="pre" ng-class="{'fade_out' : enter_clicked, 'toggled' : pre_top > 0.40}">
+				All about my journey. All about my lifestyle.
+			</div>
+			<div class="name" ng-class="{'fade_out' : enter_clicked, 'toggled' : name_top > 0.35}">
+				Simon Cheng
+			</div>
+			<div class="text-right">
+				<button class="enter col-sm-3 col-sm-offset-10" ng-disabled="enter_disabled" ng-click="intro_close()" ng-class="{'fade_out' : enter_clicked, 'toggled' : enter_top > 0.41}">
+					<span class="arrow" >►</span>
+					<span class="enter_text">Enter</span>
+				</button>
+			</div>
 		</div>
-		<div class="name" ng-class="{'fade_out' : enter_clicked}">
-			Simon Cheng
-		</div>
-		<button class="enter col-sm-3 col-sm-offset-10" ng-disabled="enter_disabled" ng-click="intro_close()" ng-class="{'fade_out' : enter_clicked}">
-			<span class="arrow">►</span>
-			<span class="enter_text">Enter</span>
-		</button>
-
 	</div>
 </div>

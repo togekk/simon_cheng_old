@@ -1,11 +1,43 @@
 .travel {
-	background-size: 101%;
-	background-position: center;
+	overflow: auto;
 }
 
-.fill {
-	width: 101%;
-	height: 101%;
-	min-height: 101%;
+.travel::-webkit-scrollbar {
+	display: none;
+}
+
+.travel_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*z-index: -2;*/
+	cursor: pointer;
+	transition: filter .4s ease-in-out;
+	-webkit-transition: -webkit-filter .4s ease-in-out;
+	
+}
+
+.travel_bg.toggled {
+	-webkit-filter: blur(10px);
+	filter: blur(10px);
+}
+
+.travel .container {
+	position: relative;
+	margin-top: 5%;
+	color: #FFFFFF;
+}
+
+.text {
+	padding: 5%;
+	opacity: .1;
+	transition: all .4s ease-in-out;
+}
+
+.text.active {
+	opacity: 1;
+	background: rgba(0,0,0,0.5);
+	/*background-image: url('https://s33.postimg.org/xsxvtm4fx/sydney1.jpg');*/
+	
 }
 

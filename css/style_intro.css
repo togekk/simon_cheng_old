@@ -2,18 +2,12 @@
 /* CSS Document */
 
 .intro {
-	position: absolute;
-	opacity: 1;
-	/*animation: BackgroundFadeIn 1s ease-out forwards;
-	 -webkit-animation: BackgroundFadeIn 1s ease-out forwards;
-	 -moz-animation: BackgroundFadeIn 1s ease-out forwards;
-	 -o-animation: BackgroundFadeIn 1s ease-out forwards;
-	 -ms-animation: BackgroundFadeIn 1s ease-out forwards;*/
+	background-image: url('http://s33.postimg.org/l71iz8931/image.jpg');
 }
 
 .container {
 	display: flex;
-	width: 101%;
+	width: 100%;
 	justify-content: center;
 }
 
@@ -50,6 +44,7 @@
 }
 
 .enter {
+	color: #333;
 	font-size: 12px;
 	padding: 20px 15px;
 	opacity: 0;
@@ -65,9 +60,21 @@
 	font-family: 'Segoe UI Light';
 }
 
-.enter.arrow {
+.enter .arrow {
 	font-size: 1em;
-	color: #309;
+}
+
+.pre.toggled,
+.name.toggled,
+.enter.toggled .enter_text,
+.enter.toggled .arrow {
+	color: #FFFFFF;
+}
+
+@media (max-width: 400px) {
+	.name {
+		font-size: 12vmax;
+	}
 }
 
 .enter.fade_out {
@@ -90,13 +97,6 @@
 	-ms-animation: TitleFadeOut ease-in .7s forwards;
 	animation: TitleFadeOut ease-in .7s forwards;
 }
-
-/*.background-fade-out {
- -webkit-animation: BackgroundFadeOut ease 1s;
- -moz-animation: BackgroundFadeOut ease 1s;
- -ms-animation: BackgroundFadeOut ease 1s;
- animation: BackgroundFadeOut ease 1s;
- }*/
 
 @keyframes BackgroundFadeIn{
 from {
@@ -331,53 +331,3 @@ opacity:0;
 }
 }
 
-@keyframes BackgroundFadeOut{
-0% {
-transform:  translate(0px,0px)  ;
-opacity:1;
-}
-100% {
-transform:  translate(-1%,0px)  ;
-opacity:0;
-}
-
-@-moz-keyframes BackgroundFadeOut{
-0% {
--moz-transform:  translate(0px,0px)  ;
-opacity:1;
-}
-100% {
--moz-transform:  translate(-1%,0px)  ;
-opacity:0;
-}
-}
-
-@-webkit-keyframes BackgroundFadeOut{
-0% {
--webkit-transform:  translate(0px,0px)  ;
-opacity:1;
-}
-100% {
--webkit-transform:  translate(-1%,0px)  ;
-opacity:0;
-}
-
-@-o-keyframes BackgroundFadeOut{
-0% {
--o-transform:  translate(0px,0px)  ;
-opacity:1;
-}
-100% {
--o-transform:  translate(-1%,0px)  ;
-opacity:0;
-}
-
-@-ms-keyframes BackgroundFadeOut{
-0% {
--ms-transform:  translate(0px,0px)  ;
-opacity:1;
-}
-100% {
--ms-transform:  translate(-1%,0px)  ;
-opacity:0;
-}
