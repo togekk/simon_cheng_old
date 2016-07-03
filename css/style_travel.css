@@ -6,6 +6,7 @@
 	display: none;
 }
 
+
 .travel_bg {
 	position: absolute;
 	top: 0;
@@ -14,7 +15,6 @@
 	cursor: pointer;
 	transition: filter .4s ease-in-out;
 	-webkit-transition: -webkit-filter .4s ease-in-out;
-	
 }
 
 .travel_bg.toggled {
@@ -23,21 +23,58 @@
 }
 
 .travel .container {
-	position: relative;
-	margin-top: 5%;
+	display: flex;
+	justify-content: center;
 	color: #FFFFFF;
 }
 
 .text {
 	padding: 5%;
-	opacity: .1;
-	transition: all .4s ease-in-out;
+	line-height: 40px;
+	font-family: 'Segoe UI Light', 'Microsoft JhengHei';
+	font-size: 18px;
+	transition: opacity .4s ease-in-out;
 }
 
-.text.active {
+.container.lang_select {
+	position: fixed;
+}
+
+.container.content {
+	position: relative;
+	margin-top: 5%;
+}
+
+.container.content .text {
+	opacity: .1;
+}
+
+
+.lang_select button {
+	margin: 0 10px;
+	opacity: .1;
+}
+
+break {
+	display: block;
+	height: 1em;
+}
+
+.text p {
+	margin-bottom: 1em;
+}
+
+.text h2 {
+	margin-bottom: 30px !important;
+}
+
+
+.container.content .text.active {
 	opacity: 1;
 	background: rgba(0,0,0,0.5);
-	/*background-image: url('https://s33.postimg.org/xsxvtm4fx/sydney1.jpg');*/
-	
+
 }
 
+.lang_select button:hover {
+	opacity: 1;
+}

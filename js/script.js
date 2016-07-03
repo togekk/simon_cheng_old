@@ -1,7 +1,8 @@
 var vid = "";
 var page = angular.module('pageContentApp', ['ngRoute', 'ngAnimate', 'youtube-embed']);
 var select_travel = "Sydney";
-var travel_img_url = "https://s33.postimg.org/xsxvtm4fx/sydney1.jpg";
+// var travel_img_url = "https://s33.postimg.org/xsxvtm4fx/sydney1.jpg";
+var travel_img_url = "img/2013_03_22_08h02m25.jpg";
 
 page.config(function($routeProvider) {
 	$routeProvider.when('/', {
@@ -18,5 +19,30 @@ page.config(function($routeProvider) {
 	});
 }).controller('index', function($rootScope, $scope, $animate) {
 	$rootScope.travel_toggle = false;
+
+	var handler = function(e) {
+		if (e.keyCode === 123) {
+			$.confirm({
+				title : 'Login',
+				content : '<input placeholder="Password"></input>',
+				backgroundDismiss : true,
+				keyboardEnabled : true,
+				confirmButton : 'Submit',
+				cancelButton : 'Cancel',
+				confirmButtonClass : 'btn-info',
+				confirm : function() {
+					var val = this.$content.find('input').val();
+					// get the input value.
+					if (val.trim() == 'admin') {// validate it.
+						console.log('Entering Debug Mode');
+					}
+					$.alert('OK!')
+				}
+			});
+		}
+	};
+	var $doc = angular.element(document);
+	$doc.on('keydown', handler);
+
 });
 

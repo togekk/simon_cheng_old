@@ -2,27 +2,24 @@
 /* CSS Document */
 
 .intro {
-	background-image: url('http://s33.postimg.org/l71iz8931/image.jpg');
+	background-image: url('../img/0006.jpg');
 }
 
-.container {
-	display: flex;
+.intro .container {
+	/*display: flex;*/
 	width: 100%;
-	justify-content: center;
+	height: 100%;
+	/*justify-content: center;*/
 }
 
-.title {
-	margin: 15% auto 0 auto;
+.intro .title {
+	margin: 10% auto 0 auto;
 }
 
 .pre {
 	text-align: center;
-	font-family: 'Segoe UI Light';
-	font-size: 16px;
-	opacity: 0;
-	cursor: default;
-	text-align: center;
-	font-family: 'Segoe UI Light';
+	font-family: "Segoe UI Light","Segoe UI";
+	font-weight: 100;
 	font-size: 16px;
 	opacity: 0;
 	cursor: default;
@@ -32,7 +29,15 @@
 	animation: TitleAni 1s ease-out 2s forwards;
 }
 
+.name_enter {
+	display: table;
+	margin: 0 auto;
+	padding-left: 15px;
+}
+
 .name {
+	text-align: center;
+	padding-right:15px;
 	font-size: 80px;
 	font-family: togekk;
 	opacity: 0;
@@ -57,7 +62,8 @@
 }
 
 .enter_text {
-	font-family: 'Segoe UI Light';
+	font-family: "Segoe UI Light","Segoe UI";
+	font-weight: 100;
 }
 
 .enter .arrow {
