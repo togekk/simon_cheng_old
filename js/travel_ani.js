@@ -4,14 +4,6 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
 		window.location = travel_img_url;
 	}
 
-	angular.element(travel).on('scroll', function() {
-
-		var y = 1 - ($(this).scrollTop() / 300);
-		$scope.scroll = y.toString();
-		$scope.safeApply();
-
-	});
-	
 	$scope.lang = $window.navigator.language || $window.navigator.userLanguage;
 
 	$scope.safeApply = function(fn) {
@@ -25,4 +17,16 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
 		}
 	};
 
+}).directive("changeOpacity", function() {
+	return {
+		restrict : 'A',
+		link : function(scope, element, attrs) {
+
+			element.bind('scroll', function() {
+				var y = 1 - (element[0].scrollTop / 300);
+				element[0].querySelector('.travel_bg').style.opacity = y.toString();
+			});
+
+		}
+	}
 });

@@ -31,7 +31,8 @@
 .text {
 	padding: 5%;
 	line-height: 40px;
-	font-family: 'Segoe UI Light', 'Microsoft JhengHei';
+	font-family: 'Segoe UI Light', 'Segoe UI', 'Microsoft JhengHei';
+	font-weight: lighter;
 	font-size: 18px;
 	transition: opacity .4s ease-in-out;
 }

@@ -66,8 +66,10 @@ button.menu_button {
 
 button.menu_button.ani_on {
 	opacity: 1;
+	-moz-transform: translate(0, 0) scale(1);
 	transform: translate(0, 0) scale(1);
 	-webkit-transition: all .7s cubic-bezier(0.000, 1.000, 0.000, 1.000);
+	-moz-transition: all .7s cubic-bezier(0.000, 1.000, 0.000, 1.000);
 	transition: all .7s cubic-bezier(0.000, 1.000, 0.000, 1.000);
 }
 
@@ -90,6 +92,7 @@ button.menu_button.ani_on {
 	opacity: 0;
 	background-color: rgba(0,0,0,0.5);
 	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out
 }
 
@@ -98,12 +101,14 @@ button.menu_button.ani_on {
 	position: relative;
 	width: 100%;
 	-webkit-transition: all .4s linear;
+	-moz-transition: all .4s linear;
 	transition: all .4s linear;
 }
 
-.hovereffect:hover img {
+button:hover .hovereffect img {
 	-ms-transform: scale(1.2);
 	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
 	transform: scale(1.2);
 }
 
@@ -117,10 +122,11 @@ button.menu_button.ani_on {
 	opacity: 0;
 	background-color: rgba(0,0,0,0.5);
 	-webkit-transition: all .4s ease-in-out;
+	-moz-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
 }
 
-.hovereffect:hover .overlay {
+button:hover .hovereffect .overlay {
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
@@ -132,17 +138,20 @@ button.menu_button.ani_on {
 	font-size: 17px;
 	background: rgba(0,0,0,0.6);
 	-webkit-transform: translatey(-100px);
+	-moz-transform: translatey(-100px);
 	-ms-transform: translatey(-100px);
 	transform: translatey(-100px);
 	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 	padding: 10px;
 }
 
-.hovereffect:hover .pic_title {
+button:hover .hovereffect .pic_title {
 	opacity: 1;
 	filter: alpha(opacity=100);
 	-ms-transform: translatey(150%);
+	-moz-transform: translatey(150%);
 	-webkit-transform: translatey(150%);
 	transform: translatey(150%);
 }
@@ -173,8 +182,8 @@ button.menu_button.ani_on {
 .menu_title {
 	color: #FFFFFF;
 	font-size: 7vmax;
-	font-family: "Segoe UI Light";
-	font-weight: 200;
+	font-family: "Segoe UI Light", "Segoe UI";
+	font-weight: lighter;
 }
 
 .menu::-webkit-scrollbar {

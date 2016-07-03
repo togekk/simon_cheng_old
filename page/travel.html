@@ -1,6 +1,6 @@
 <!-- travel.html -->
-<div class="travel fill" id="travel">
-	<div class="travel_bg fill" ng-style="{'background-image' : 'url(' + bg_travel + ')', 'opacity' : scroll}"
+<div class="travel fill" id="travel" change-opacity>
+	<div class="travel_bg fill" id="travel_bg" ng-style="{'background-image' : 'url(' + bg_travel + ')'}"
 	ng-class="{'toggled' : active_toggle}" ng-click="go()"></div>
 	
 	<div class="container content col-sm-8 col-sm-offset-2">

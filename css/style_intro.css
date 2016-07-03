@@ -19,7 +19,7 @@
 .pre {
 	text-align: center;
 	font-family: "Segoe UI Light","Segoe UI";
-	font-weight: 100;
+	font-weight: lighter;
 	font-size: 16px;
 	opacity: 0;
 	cursor: default;
@@ -63,7 +63,7 @@
 
 .enter_text {
 	font-family: "Segoe UI Light","Segoe UI";
-	font-weight: 100;
+	font-weight: lighter;
 }
 
 .enter .arrow {
