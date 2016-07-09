@@ -35,4 +35,29 @@ page.controller('intro', function($rootScope, $scope, $animate, $timeout, $windo
 			this.$apply(fn);
 		}
 	};
-}); 
+});
+
+// .directive("detectPosition", function($window) {
+//
+// 	return {
+// 		restrict : 'A',
+// 		link : function(scope, element, attrs) {
+//
+// 			console.log($window.innerHeight);
+//
+// 			angular.element($window).bind('resize', function() {
+//
+//
+//
+// 				scope.pre_top = element[0].querySelector('.pre').prop('offsetTop') / $window.innerHeight;
+// 				scope.name_top = element[0].querySelector('.name').prop('offsetTop') / $window.innerHeight;
+// 				scope.enter_top = element[0].querySelector('.enter').prop('offsetTop') / $window.innerHeight;
+//
+// 				console.log(element[0].querySelector('.pre').prop('offsetTop') / $window.innerHeight);
+//
+// 			});
+//
+// 		}
+// 	};
+//
+// });

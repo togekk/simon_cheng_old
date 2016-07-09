@@ -1,12 +1,14 @@
 <!-- travel.html -->
-<div class="travel fill" id="travel" change-opacity>
-	<div class="travel_bg fill" id="travel_bg" ng-style="{'background-image' : 'url(' + bg_travel + ')'}"
-	ng-class="{'toggled' : active_toggle}" ng-click="go()"></div>
+<div class="travel fill" change-opacity>
+	<div class="travel_bg fill" ng-style="{'background-image' : 'url(img/2007-01-01-14h45m19-2.jpg)'}"
+	ng-class="{'toggled' : active_toggle}" ng-click="go2()" ng-mouseover="active_toggle = false" ng-mouseleave="active_toggle = true" ></div>
+	<div class="travel_bg fill bg1" ng-style="{'background-image' : 'url(' + bg_travel + ')'}"
+	ng-class="{'toggled' : active_toggle}" ng-click="go()" ng-mouseover="active_toggle = false" ng-mouseleave="active_toggle = true" ></div>
 	
 	<div class="container content col-sm-8 col-sm-offset-2">
 		
 		<span class="text" ng-class="{'active' : active_toggle}" ng-init="active_toggle = true"
-		ng-mouseover="active_toggle = true"	ng-mouseleave="active_toggle = false" ng-click="active_toggle = !active_toggle">
+		ng-click="active_toggle = !active_toggle">
 			<span ng-show="lang.substring(0,2) === 'en'">
 				<p>I still don't know where this flight will take me.</p>
 				<p>I still don't know where this road will lead me.</p>
@@ -14,19 +16,29 @@
 				<p>This will change my life forever.</p>
 				<break></break>
 			
-				<p>The night before I left Taiwan, I asked myself over and over again if I have to do this. Yeah, first time being a backpacker. First time
-				traveling alone. First time speaking English. And first time doing everything on my own without any help from travel
-				agencies.</p> 
-				<h2>22.03.2013</h2>
-			
-				<p>I still don't know where this flight will take me.</p>
-				<p>I still don't know where this road will lead me.</p>
-				<p>But one thing I know for sure,</p>
-				<p>This will change my life forever.</p>
+				<p>The night before I left Taiwan, I asked myself over and over again if I have to do this. Yeah, first time being a
+				backpacker. First time traveling alone. First time speaking English. And first time doing everything on my own without
+				any help from travel agencies.</p>
+				
 				<break></break>
-			
-			 
+				
 				<h2>22.03.2013</h2>
+			
+				<p>Sydney, the biggest city in Australia. Everything's so big and so complex. Especially the Central Station. When I
+				arrived in there I was totally shocked. 21 platforms! Never seen so many in my life. And every street is extremely
+				busy. Alright, I have to head for the hostel to put my luggage so that everything will be easier.</p>
+				
+				<p>The hostel located near the small beach which probably few backpackers knows about it -- Coogee Beach. I only
+				checked one bus called "M50" and saved a screenshot in my phone, so I had to find the bus since I had no Internet.
+				Well, or since I was too self-confident. So I spent 2 hours, dragging my 36kg luggage, running in circle and asking
+				around Central station, but just couldn't find any signs showing M50. I did find one, but it was in the wrong
+				direction. That luggage nearly killed me, and I'll swear I'll never do that again.</p>
+				
+				<p>When I finally arrived at Coogee Beach, it was already 2pm. I rang the hostel's doorbell, no one answered. I
+				looked up to the sign near the door. "Office Hour: 9am-1pm, 5pm-10pm" Wait, what? They have lunch break? So I just
+				dragged my luggage again back to the beach. I was so tired but I couldn't sleep. I felt so insecure about my stuff will
+				get stolen anytime.</p>
+			
 			</span>
 			
 			<span ng-show="lang.substring(0,2) === 'zh'">
@@ -46,7 +58,7 @@
 	
 	<div class="container lang_select col-sm-8 col-sm-offset-2">
 		<span class="text" ng-class="{'active' : active_toggle}" ng-init="active_toggle = true"
-		ng-mouseover="active_toggle = true"	ng-mouseleave="active_toggle = false">
+		ng-mouseover="active_toggle = true">
 			<button ng-click="lang = 'en'">English</button>
 			<button ng-click="lang = 'zh'">中文</button>
 		</span>

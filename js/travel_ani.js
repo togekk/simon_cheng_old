@@ -1,7 +1,11 @@
 page.controller('travel', function($rootScope, $scope, $timeout, $location, $window) {
 	$scope.bg_travel = travel_img_url;
 	$scope.go = function() {
-		window.location = travel_img_url;
+		window.open(travel_img_url, '_blank');
+	};
+	
+	$scope.go2 = function() {
+		window.open('img/2007-01-01-14h45m19-2.jpg', '_blank');
 	}
 
 	$scope.lang = $window.navigator.language || $window.navigator.userLanguage;
@@ -24,7 +28,12 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
 
 			element.bind('scroll', function() {
 				var y = 1 - (element[0].scrollTop / 300);
-				element[0].querySelector('.travel_bg').style.opacity = y.toString();
+				element[0].querySelector('.bg1').style.opacity = y.toString();
+				if (y <= 0) {
+					element[0].querySelector('.bg1').style.display = 'none';
+				} else {
+					element[0].querySelector('.bg1').style.display = 'block';
+				};
 			});
 
 		}
