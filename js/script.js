@@ -4,6 +4,8 @@ var select_travel = "Sydney";
 // var travel_img_url = "https://s33.postimg.org/xsxvtm4fx/sydney1.jpg";
 var travel_img_url = "img/2013_03_22_08h02m25.jpg";
 
+TweenMax.lagSmoothing(50, 16);
+
 page.config(function($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl : 'page/intro.html',
@@ -48,11 +50,11 @@ page.config(function($routeProvider) {
   return {
     enter: function(element, done) {
       TweenMax.fromTo(element, .7, {css: {opacity: 0, marginLeft: "0"}},
-			{css: {opacity: 1, marginLeft: "-.5%"}})
+			{css: {opacity: 1, marginLeft: "-.5%"}});
     },
     leave: function(element, done) {
       TweenMax.fromTo(element, .7, {css: {opacity: 1, marginLeft: "-.5%"}},
-				{css: {opacity: 0, marginLeft: "-1%"}})
+				{css: {opacity: 0, marginLeft: "-1%"}});
     }
   }
 })
