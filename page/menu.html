@@ -3,7 +3,7 @@
 
 	<youtube-video video-id="bgVideo" player-vars="playerVars"></youtube-video>
 
-	<div class="loading text-center vertical-center" ng-class="loading_done_fade" ng-hide="loading_done_hide">
+	<div class="loading text-center vertical-center" ng-hide="loading_done_hide">
 		<img src="img/menu_bg.jpg" width="100%" />
 	</div>
 
@@ -12,9 +12,11 @@
 			<div class="menu_title">
 				Travel
 			</div>
-			<button class="menu_button col-sm-3 col-sm-offset-2" ng-class="button_ani" ng-click="close_menu()" >
+			<button class="menu_button col-sm-3 col-sm-offset-2"
+			ng-mouseover="hover()"
+			ng-mouseleave="unhover()" ng-click="close_menu()">
 				<div class="hovereffect">
-					<img src="{{travel_img}}" />
+					<img class="travel_img" src="{{travel_img}}" />
 					<div class="overlay">
 						<div class="pic_title">
 							{{travel_title}}
@@ -26,4 +28,3 @@
 	</div>
 
 </div>
-

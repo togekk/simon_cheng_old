@@ -21,12 +21,8 @@
 	font-family: "Segoe UI Light","Segoe UI";
 	font-weight: lighter;
 	font-size: 16px;
-	opacity: 0;
+	/*opacity: 0;*/
 	cursor: default;
-	/*-webkit-animation: TitleAni 1s ease-out 2s forwards;
-	-moz-animation: TitleAni 1s ease-out 2s forwards;
-	-ms-animation: TitleAni 1s ease-out 2s forwards;
-	animation: TitleAni 1s ease-out 2s forwards;*/
 }
 
 .name_enter {
@@ -55,10 +51,6 @@
 	opacity: 0;
 	cursor: pointer;
 	text-align: right;
-	/*-webkit-animation: EnterFadeIn .3s ease-out forwards 5s;
-	-moz-animation: EnterFadeIn .3s ease-out forwards 5s;
-	-ms-animation: EnterFadeIn .3s ease-out forwards 5s;
-	animation: EnterFadeIn .3s ease-out forwards 5s;*/
 }
 
 .enter_text {
@@ -82,25 +74,3 @@
 		font-size: 12vmax;
 	}
 }
-
-/*.enter.fade_out {
-	-webkit-animation: EnterFadeOut ease-in .3s forwards;
-	-moz-animation: EnterFadeOut ease-in .3s forwards;
-	-ms-animation: EnterFadeOut ease-in .3s forwards;
-	animation: EnterFadeOut ease-in .3s forwards;
-}
-
-.name.fade_out {
-	-webkit-animation: TitleFadeOut ease-in .5s forwards;
-	-moz-animation: TitleFadeOut ease-in .5s forwards;
-	-ms-animation: TitleFadeOut ease-in .5s forwards;
-	animation: TitleFadeOut ease-in .5s forwards;
-}
-
-.pre.fade_out {
-	-webkit-animation: TitleFadeOut ease-in .7s forwards;
-	-moz-animation: TitleFadeOut ease-in .7s forwards;
-	-ms-animation: TitleFadeOut ease-in .7s forwards;
-	animation: TitleFadeOut ease-in .7s forwards;
-}
-*/

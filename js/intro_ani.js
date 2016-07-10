@@ -1,6 +1,10 @@
 page.controller('intro', function($rootScope, $scope, $animate, $timeout, $window) {
 
 	$scope.enter_disabled = true;
+	TweenMax.fromTo($('.pre'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(2);
+	TweenMax.fromTo($('.name'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(3);
+	TweenMax.fromTo($('.enter'), .3, {opacity: 0, x: 5}, {opacity: 1, x: 0, ease: Power2.easeOut}).delay(5);
+
 
 	$timeout(function() {
 		$scope.enter_disabled = false;
@@ -9,6 +13,9 @@ page.controller('intro', function($rootScope, $scope, $animate, $timeout, $windo
 	$scope.intro_close = function() {
 		$scope.enter_disabled = true;
 		$scope.enter_clicked = true;
+		TweenMax.fromTo($('.pre'), .7, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Power2.easeIn});
+		TweenMax.fromTo($('.name'), .5, {opacity: 1, y: 0}, {opacity: 0, y: -10, ease: Power2.easeIn});
+		TweenMax.fromTo($('.enter'), .3, {opacity: 1, x: 0}, {opacity: 0, x: -5, ease: Power2.easeIn});
 		$timeout(function() {
 			window.location.href = "#/menu";
 		}, 700);

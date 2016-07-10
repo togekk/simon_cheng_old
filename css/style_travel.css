@@ -13,13 +13,13 @@
 	left: 0;
 	/*z-index: -2;*/
 	cursor: pointer;
-	transition: filter .4s ease-in-out;
-	-webkit-transition: -webkit-filter .4s ease-in-out;
+	/*transition: filter .4s ease-in-out;
+	-webkit-transition: -webkit-filter .4s ease-in-out;*/
 }
 
 .travel_bg.toggled {
-	-webkit-filter: blur(10px);
-	filter: blur(10px);
+	/*-webkit-filter: blur(10px);
+	filter: blur(10px);*/
 }
 
 .travel .container {
@@ -34,7 +34,7 @@
 	font-family: 'Segoe UI Light', 'Segoe UI', 'Microsoft JhengHei';
 	font-weight: lighter;
 	font-size: 18px;
-	transition: opacity .4s ease-in-out;
+	/*transition: opacity .4s ease-in-out;*/
 }
 
 .container.lang_select {
@@ -47,7 +47,8 @@
 }
 
 .container.content .text {
-	opacity: .1;
+	background-color: rgba(0,0,0,0.5);
+	/*opacity: .1;*/
 }
 
 
@@ -71,9 +72,7 @@ break {
 
 
 .container.content .text.active {
-	opacity: 1;
-	background: rgba(0,0,0,0.5);
-
+	/*background: rgba(0,0,0,0.5);*/
 }
 
 .lang_select button:hover {

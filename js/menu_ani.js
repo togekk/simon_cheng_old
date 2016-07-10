@@ -5,9 +5,10 @@ page.controller('menu', function($rootScope, $scope, $timeout) {
 	$scope.travel_title = select_travel;
 	$scope.loading_icon = "fa fa-spinner fa-pulse fa-5x fa-fw";
 
-	$timeout(function() {
-		$scope.button_ani = "ani_on";
-	}, 700);
+	TweenMax.fromTo($('.menu_button'), 1, {opacity: 0, y: 100, scale: 0.5},
+	{opacity: 1, y: 0, scale: 1, ease: Power2.easeOut}).delay(.7);
+
+	TweenMax.to($('.pic_title'), 0, {y: -100});
 
 	$scope.bgVideo = '1uTOaQbWbnQ';
 	$scope.playerVars = {
@@ -31,11 +32,9 @@ page.controller('menu', function($rootScope, $scope, $timeout) {
 	});
 
 	$scope.$on('youtube.player.playing', function($event, player) {
-		// $scope.loading_icon = null;
-		$scope.loading_done_fade = "fade_out";
-		$timeout(function() {
-			$scope.loading_done_hide = true;
-		}, 200);
+
+		TweenMax.to($('.loading'), 1, {opacity: 0, ease: Power2.easeOut,
+		onComplete: function() {$scope.loading_done_hide = true}});
 
 	});
 
@@ -43,4 +42,15 @@ page.controller('menu', function($rootScope, $scope, $timeout) {
 		player.seekTo('25');
 	});
 
-})
+	$scope.hover = function() {
+		TweenMax.to($('.travel_img'), .4, {scale: 1.2});
+		TweenMax.to($('.overlay'), .1, {opacity: 1, ease: Power1.easeInOut});
+		TweenMax.to($('.pic_title'), .4, {y: 90, ease: Power1.easeInOut});
+	};
+
+	$scope.unhover = function() {
+		TweenMax.to($('.travel_img'), .4, {scale: 1});
+		TweenMax.to($('.overlay'), .1, {opacity: 0, ease: Power1.easeInOut});
+		TweenMax.to($('.pic_title'), .4, {y: -100, ease: Power1.easeInOut});
+	};
+});
