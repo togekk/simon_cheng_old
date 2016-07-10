@@ -44,5 +44,15 @@ page.config(function($routeProvider) {
 	var $doc = angular.element(document);
 	$doc.on('keydown', handler);
 
-});
-
+}).animation('.view', function(){
+  return {
+    enter: function(element, done) {
+      TweenMax.fromTo(element, .7, {css: {opacity: 0, marginLeft: "0"}},
+			{css: {opacity: 1, marginLeft: "-.5%"}})
+    },
+    leave: function(element, done) {
+      TweenMax.fromTo(element, .7, {css: {opacity: 1, marginLeft: "-.5%"}},
+				{css: {opacity: 0, marginLeft: "-1%"}})
+    }
+  }
+})

@@ -5,8 +5,8 @@ page.controller('menu', function($rootScope, $scope, $timeout) {
 	$scope.travel_title = select_travel;
 	$scope.loading_icon = "fa fa-spinner fa-pulse fa-5x fa-fw";
 
-	TweenMax.fromTo($('.menu_button'), 1, {opacity: 0, y: 100, scale: 0.5},
-	{opacity: 1, y: 0, scale: 1, ease: Power2.easeOut}).delay(.7);
+	TweenMax.fromTo($('.menu_button'), 1, {css:{opacity: 0, scale: 0.5, marginTop: '10%'}},
+	{css:{opacity: 1, scale: 1, marginTop: '0'}, ease: Power2.easeOut}).delay(.7);
 
 	TweenMax.to($('.pic_title'), 0, {y: -100});
 
@@ -45,7 +45,7 @@ page.controller('menu', function($rootScope, $scope, $timeout) {
 	$scope.hover = function() {
 		TweenMax.to($('.travel_img'), .4, {scale: 1.2});
 		TweenMax.to($('.overlay'), .1, {opacity: 1, ease: Power1.easeInOut});
-		TweenMax.to($('.pic_title'), .4, {y: 90, ease: Power1.easeInOut});
+		TweenMax.to($('.pic_title'), .4, {css:{y: '200%'}, ease: Power1.easeInOut});
 	};
 
 	$scope.unhover = function() {
