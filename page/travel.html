@@ -7,7 +7,7 @@
 
 	<div class="container content col-sm-8 col-sm-offset-2">
 
-		<span class="text">
+		<span class="text" ng-click="text_toggle = !text_toggle; text_toggle ? blur() : unblur()">
 			<span ng-show="lang.substring(0,2) === 'en'">
 				<p>I still don't know where this flight will take me.</p>
 				<p>I still don't know where this road will lead me.</p>
