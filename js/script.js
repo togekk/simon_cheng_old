@@ -1,10 +1,21 @@
 var vid = "";
-var page = angular.module('pageContentApp', ['ngRoute', 'ngAnimate', 'youtube-embed']);
+var page = angular.module('pageContentApp', ['ngRoute', 'ngAnimate', 'youtube-embed', 'ngSanitize', "firebase"]);
 var select_travel = "Sydney";
 // var travel_img_url = "https://s33.postimg.org/xsxvtm4fx/sydney1.jpg";
 var travel_img_url = "img/2013_03_22_08h02m25.jpg";
+var password;
 
-TweenMax.lagSmoothing(50, 16);
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyBrU056chLxs5ZA9AihQsAJwpAY0JwMJjA",
+	authDomain: "simon-cheng.firebaseapp.com",
+	databaseURL: "https://simon-cheng.firebaseio.com",
+	storageBucket: "simon-cheng.appspot.com",
+};
+firebase.initializeApp(config);
+
+
+TweenMax.lagSmoothing(500, 16);
 
 page.config(function($routeProvider) {
 	$routeProvider.when('/', {
@@ -19,14 +30,36 @@ page.config(function($routeProvider) {
 	}).otherwise({
 		redirectTo : '/'
 	});
+}).run(function($rootScope){
+
+	$rootScope.debug_mode = false;
+
 }).controller('index', function($rootScope, $scope, $animate) {
 	$rootScope.travel_toggle = false;
+
+	var connectedRef = firebase.database().ref(".info/connected");
+	connectedRef.on("value", function(snap) {
+		if (snap.val() === true) {
+			console.log("connected");
+			$scope.loading = null;
+		} else {
+			console.log("not connected");
+			$scope.loading = 'Loading...';
+		}
+	});
+
+	var database = firebase.database().ref('password/');
+
+	database.on('value', function(snap) {
+		password = snap.val();
+	});
+
 
 	var handler = function(e) {
 		if (e.keyCode === 123) {
 			$.confirm({
 				title : 'Login',
-				content : '<input placeholder="Password"></input>',
+				content : '<input type="password" placeholder="Password" />',
 				backgroundDismiss : true,
 				keyboardEnabled : true,
 				confirmButton : 'Submit',
@@ -35,10 +68,14 @@ page.config(function($routeProvider) {
 				confirm : function() {
 					var val = this.$content.find('input').val();
 					// get the input value.
-					if (val.trim() == 'admin') {// validate it.
+					if (val.trim() == password) {// validate it.
 						console.log('Entering Debug Mode');
-					}
-					$.alert('OK!')
+						$.alert('Entering Debug Mode');
+						$rootScope.debug_mode = true;
+					} else {
+						$.alert('Wrong Password');
+					};
+
 				}
 			});
 		}

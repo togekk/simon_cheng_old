@@ -1,64 +1,30 @@
 <!-- travel.html -->
-<div class="travel fill" change-opacity>
+<div class="travel fill" change-opacity ng-click="text_editable = !text_editable; write(text, lang_editing)">
 	<div class="travel_bg fill" ng-style="{'background-image' : 'url(img/2007-01-01-14h45m19-2.jpg)'}"
-	 ng-click="go2()" ng-mouseover="blur()" ng-mouseleave="unblur()" ></div>
+	 ng-click="go2()" ng-mouseover="blur()" ng-mouseleave="unblur()"></div>
 	<div class="travel_bg fill bg1" ng-style="{'background-image' : 'url(' + bg_travel + ')'}"
-	 ng-click="go()" ng-mouseover="blur()" ng-mouseleave="unblur()" ></div>
+	 ng-click="go()" ng-mouseover="blur()" ng-mouseleave="unblur()"></div>
 
-	<div class="container content col-sm-8 col-sm-offset-2">
+	<div class="container content col-sm-8 col-sm-offset-2" ng-class="{'editing' : text_editable && debug_mode}">
 
-		<span class="text" ng-click="text_toggle = !text_toggle; text_toggle ? blur() : unblur()">
-			<span ng-show="lang.substring(0,2) === 'en'">
-				<p>I still don't know where this flight will take me.</p>
-				<p>I still don't know where this road will lead me.</p>
-				<p>But one thing I know for sure,</p>
-				<p>This will change my life forever.</p>
-				<break></break>
+		<div class="text_box" ng-repeat="(key, value) in text" ng-click="editing(key)">
+		<div class="text col-sm-12" ng-show="lang.substring(0,2) === key" ng-repeat="item in value.data">
+				<span class="row">
+					<span ng-bind-html="item.text" ng-hide="text_editable && debug_mode">
+					</span>
+					<textarea class="col-sm-12" ng-model="item.text" ng-show="text_editable && debug_mode" ng-click="$event.stopPropagation()">
+					</textarea>
+				</span>
+		</div>
 
-				<p>The night before I left Taiwan, I asked myself over and over again if I have to do this. Yeah, first time being a
-				backpacker. First time traveling alone. First time speaking English. And first time doing everything on my own without
-				any help from travel agencies.</p>
-
-				<break></break>
-
-				<h2>22.03.2013</h2>
-
-				<p>Sydney, the biggest city in Australia. Everything's so big and so complex. Especially the Central Station. When I
-				arrived in there I was totally shocked. 21 platforms! Never seen so many in my life. And every street is extremely
-				busy. Alright, I have to head for the hostel to put my luggage so that everything will be easier.</p>
-
-				<p>The hostel located near the small beach which probably few backpackers knows about it -- Coogee Beach. I only
-				checked one bus called "M50" and saved a screenshot in my phone, so I had to find the bus since I had no Internet.
-				Well, or since I was too self-confident. So I spent 2 hours, dragging my 36kg luggage, running in circle and asking
-				around Central station, but just couldn't find any signs showing M50. I did find one, but it was in the wrong
-				direction. That luggage nearly killed me, and I'll swear I'll never do that again.</p>
-
-				<p>When I finally arrived at Coogee Beach, it was already 2pm. I rang the hostel's doorbell, no one answered. I
-				looked up to the sign near the door. "Office Hour: 9am-1pm, 5pm-10pm" Wait, what? They have lunch break? So I just
-				dragged my luggage again back to the beach. I was so tired but I couldn't sleep. I felt so insecure about my stuff will
-				get stolen anytime.</p>
-
-			</span>
-
-			<span ng-show="lang.substring(0,2) === 'zh'">
-				<p>我還是不知道，這班機會將我載往何處。</p>
-				<p>我還是不知道，這公路會將我帶往何處。</p>
-				<p>但我確實知道一件事</p>
-				<p>這將永遠改變我的人生。</p>
-				<break></break>
-
-				<p>離開台灣的前一晚，我再三問我自己，是否一定要這樣做。是啊，第一次當背包客。第一次一個人旅行。第一次講英文。第一次不透過任何旅行社及仲介，
-					所有事情自己一人包辦。</p>
-				<h2>22.03.2013</h2>
-			</span>
 		</span>
+	</div>
 
 	</div>
 
 	<div class="container lang_select col-sm-8 col-sm-offset-2">
-		<span class="text">
-			<button ng-click="lang = 'en'">English</button>
-			<button ng-click="lang = 'zh'">中文</button>
+		<span class="lang">
+			<button ng-repeat="(key, value) in text" ng-click="change_lang(key)" ng-bind="value.lang"></button>
 		</span>
 	</div>
 </div>

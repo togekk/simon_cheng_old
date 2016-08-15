@@ -1,5 +1,37 @@
-page.controller('travel', function($rootScope, $scope, $timeout, $location, $window) {
+page.controller('travel', function($rootScope, $scope, $timeout, $location, $window, $sanitize) {
 	$scope.bg_travel = travel_img_url;
+
+	var database = firebase.database().ref('data/');
+
+	database.on('value', function(snap) {
+		var text_data = snap.val();
+		$scope.text = text_data;
+		$scope.safeApply();
+	});
+
+	$scope.write = function(text, lang) {
+
+		if ($rootScope.debug_mode) {
+
+			angular.forEach(text, function(value, key) {
+
+				if (key == lang) {
+					angular.forEach(value.data, function(value2, key2) {
+						var database_post = firebase.database().ref('data/' + key + '/data/' + key2)
+						database_post.set({
+							id : value2.id,
+							text : value2.text
+						});
+					});
+
+				};
+
+			});
+
+		};
+
+	};
+
 	$scope.go = function() {
 		window.open(travel_img_url, '_blank');
 	};
@@ -9,6 +41,14 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
 	}
 
 	$scope.lang = $window.navigator.language || $window.navigator.userLanguage;
+
+	$scope.change_lang = function(lang) {
+		$scope.lang = lang;
+	};
+
+	$scope.editing = function(lang) {
+		$scope.lang_editing = lang;
+	};
 
 	var blurElement = {a:0};//start the blur at 0 pixels
 
@@ -30,16 +70,16 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
   	TweenMax.set(['.travel_bg'], {webkitFilter:"blur(" + blurElement.a + "px)",filter:"blur(" + blurElement.a + "px)"});
 	};
 
-	// $scope.safeApply = function(fn) {
-	// 	var phase = this.$root.$$phase;
-	// 	if (phase == '$apply' || phase == '$digest') {
-	// 		if (fn && ( typeof (fn) === 'function')) {
-	// 			fn();
-	// 		}
-	// 	} else {
-	// 		this.$apply(fn);
-	// 	}
-	// };
+	$scope.safeApply = function(fn) {
+		var phase = this.$root.$$phase;
+		if (phase == '$apply' || phase == '$digest') {
+			if (fn && ( typeof (fn) === 'function')) {
+				fn();
+			}
+		} else {
+			this.$apply(fn);
+		}
+	};
 
 }).directive("changeOpacity", function() {
 	return {
@@ -59,4 +99,53 @@ page.controller('travel', function($rootScope, $scope, $timeout, $location, $win
 
 		}
 	}
+}).factory('clickAnywhereButHereService', function($document) {
+	var tracker = [];
+
+	return function($scope, expr) {
+		var i,
+		    t,
+		    len;
+		for ( i = 0,
+		len = tracker.length; i < len; i++) {
+			t = tracker[i];
+			if (t.expr === expr && t.scope === $scope) {
+				return t;
+			}
+		}
+		var handler = function() {
+			$scope.$apply(expr);
+		};
+
+		$document.on('click', handler);
+
+		// IMPORTANT! Tear down this event handler when the scope is destroyed.
+		$scope.$on('$destroy', function() {
+			$document.off('click', handler);
+		});
+
+		t = {
+			scope : $scope,
+			expr : expr
+		};
+		tracker.push(t);
+		return t;
+	};
+
+}).directive('clickAnywhereButHere', function($document, clickAnywhereButHereService) {
+	return {
+		restrict : 'A',
+		link : function(scope, elem, attr, ctrl) {
+			var handler = function(e) {
+				e.stopPropagation();
+			};
+			elem.on('click', handler);
+
+			scope.$on('$destroy', function() {
+				elem.off('click', handler);
+			});
+
+			clickAnywhereButHereService(scope, attr.clickAnywhereButHere);
+		}
+	};
 });
