@@ -1,10 +1,25 @@
-page.controller('intro', function($rootScope, $scope, $animate, $timeout, $window) {
+
+
+page.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.bind('load', function() {
+							TweenMax.fromTo($('.pre'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(2);
+							TweenMax.fromTo($('.name'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(3);
+							TweenMax.fromTo($('.enter'), .3, {opacity: 0, x: 5}, {opacity: 1, x: 0, ease: Power2.easeOut}).delay(5);
+							TweenMax.to($('.route_loading'), .7, {opacity: 0, ease: Power2.easeIn, onComplete: function() {scope.loading_complete = true}});
+            });
+            element.bind('error', function(){
+                alert('image could not be loaded');
+            });
+        }
+    };
+}).controller('intro', function($rootScope, $scope, $animate, $timeout, $window) {
+
+	TweenMax.to($('.route_loading'), .7, {opacity: 1, ease: Power2.easeIn});
 
 	$scope.enter_disabled = true;
-	TweenMax.fromTo($('.pre'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(2);
-	TweenMax.fromTo($('.name'), 1, {opacity: 0, y: 20}, {opacity: 1, y: 0, ease: Power2.easeOut}).delay(3);
-	TweenMax.fromTo($('.enter'), .3, {opacity: 0, x: 5}, {opacity: 1, x: 0, ease: Power2.easeOut}).delay(5);
-
 
 	$timeout(function() {
 		$scope.enter_disabled = false;

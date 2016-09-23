@@ -1,76 +1,79 @@
 @charset "utf-8";
+
 /* CSS Document */
 
 .intro {
-	background-image: url('../img/0006.jpg');
+    /*background-image: url('../img/0006.jpg');*/
+    overflow: hidden;
+}
+
+.intro img {
+    position: absolute;
 }
 
 .intro .container {
-	/*display: flex;*/
-	width: 100%;
-	height: 100%;
-	/*justify-content: center;*/
+    /*display: flex;*/
+    width: 100%;
+    height: 100%;
+    /*justify-content: center;*/
 }
 
 .intro .title {
-	margin: 10% auto 0 auto;
+    margin: 10% auto 0 auto;
 }
 
 .pre {
-	text-align: center;
-	font-family: "Segoe UI Light","Segoe UI";
-	font-weight: lighter;
-	font-size: 16px;
-	/*opacity: 0;*/
-	cursor: default;
+    text-align: center;
+    font-family: "Segoe UI Light", "Segoe UI";
+    font-weight: lighter;
+    font-size: 16px;
+    /*opacity: 0;*/
+    cursor: default;
 }
 
 .name_enter {
-	display: table;
-	margin: 0 auto;
-	padding-left: 15px;
+    display: table;
+    margin: 0 auto;
+    padding-left: 15px;
 }
 
 .name {
-	text-align: center;
-	padding-right:15px;
-	font-size: 80px;
-	font-family: togekk;
-	opacity: 0;
-	cursor: default;
-	/*-webkit-animation: TitleAni 1s ease-out forwards 3s;
+    text-align: center;
+    padding-right: 15px;
+    font-size: 80px;
+    font-family: togekk;
+    opacity: 0;
+    cursor: default;
+    /*-webkit-animation: TitleAni 1s ease-out forwards 3s;
 	-moz-animation: TitleAni 1s ease-out forwards 3s;
 	-ms-animation: TitleAni 1s ease-out forwards 3s;
 	animation: TitleAni 1s ease-out forwards 3s;*/
 }
 
 .enter {
-	color: #333;
-	font-size: 12px;
-	padding: 20px 15px;
-	opacity: 0;
-	cursor: pointer;
-	text-align: right;
+    color: #333;
+    font-size: 12px;
+    padding: 20px 15px;
+    opacity: 0;
+    cursor: pointer;
+    text-align: right;
 }
 
 .enter_text {
-	font-family: "Segoe UI Light","Segoe UI";
-	font-weight: lighter;
+    font-family: "Segoe UI Light", "Segoe UI";
+    font-weight: lighter;
 }
 
 .enter .arrow {
-	font-size: 1em;
+    font-size: 1em;
 }
 
-.pre.toggled,
-.name.toggled,
-.enter.toggled .enter_text,
-.enter.toggled .arrow {
-	color: #FFFFFF;
+.pre.toggled, .name.toggled, .enter.toggled .enter_text, .enter.toggled .arrow {
+    color: #FFFFFF;
 }
 
 @media (max-width: 400px) {
-	.name {
-		font-size: 12vmax;
-	}
+    .name {
+        font-size: 12vmax;
+    }
 }
